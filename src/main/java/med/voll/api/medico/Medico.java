@@ -60,7 +60,7 @@ public class Medico {
 		}
 	}
 
-	public void ecluir() {
+	public void excluir() {
 		this.ativo = false;
 		
 	}
