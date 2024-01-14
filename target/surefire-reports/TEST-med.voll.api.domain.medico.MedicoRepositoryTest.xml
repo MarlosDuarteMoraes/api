@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="med.voll.api.ApiApplicationTests" time="15.868" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="med.voll.api.domain.medico.MedicoRepositoryTest" time="2.199" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -47,7 +47,7 @@
     <property name="localRepository" value="C:\Users\marlo\.m2\repository"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="C:\Users\marlo\AppData\Local\Temp\"/>
-    <property name="com.zaxxer.hikari.pool_number" value="1"/>
+    <property name="com.zaxxer.hikari.pool_number" value="3"/>
     <property name="java.version" value="17.0.3.1"/>
     <property name="user.dir" value="C:\Users\marlo\eclipse-workspace\api"/>
     <property name="os.arch" value="amd64"/>
@@ -63,10 +63,10 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="contextLoads" classname="med.voll.api.ApiApplicationTests" time="1.126">
-    <system-out><![CDATA[21:25:20.001 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [med.voll.api.ApiApplicationTests]: ApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-21:25:20.277 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration med.voll.api.ApiApplication for test class med.voll.api.ApiApplicationTests
-21:25:20.782 [main] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
+  <testcase name="testEscolherMedicoAleatorioLivreNaDataCenario1" classname="med.voll.api.domain.medico.MedicoRepositoryTest" time="0.436">
+    <system-out><![CDATA[2024-01-13T21:25:40.965-03:00  INFO 9564 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [med.voll.api.domain.medico.MedicoRepositoryTest]: MedicoRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-13T21:25:41.114-03:00  INFO 9564 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration med.voll.api.ApiApplication for test class med.voll.api.domain.medico.MedicoRepositoryTest
+2024-01-13T21:25:41.126-03:00  INFO 9564 --- [           main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -76,32 +76,120 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.0)
 
-2024-01-13T21:25:21.315-03:00  INFO 9564 --- [           main] med.voll.api.ApiApplicationTests         : Starting ApiApplicationTests using Java 17.0.3.1 with PID 9564 (started by marlo in C:\Users\marlo\eclipse-workspace\api)
-2024-01-13T21:25:21.317-03:00  INFO 9564 --- [           main] med.voll.api.ApiApplicationTests         : No active profile set, falling back to 1 default profile: "default"
-2024-01-13T21:25:24.169-03:00  INFO 9564 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-13T21:25:24.316-03:00  INFO 9564 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 124 ms. Found 4 JPA repository interfaces.
-2024-01-13T21:25:25.651-03:00  INFO 9564 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-01-13T21:25:25.956-03:00  INFO 9564 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@5db948c9
-2024-01-13T21:25:25.962-03:00  INFO 9564 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-01-13T21:25:26.266-03:00  INFO 9564 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
-2024-01-13T21:25:26.266-03:00  INFO 9564 --- [           main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
-2024-01-13T21:25:26.266-03:00  INFO 9564 --- [           main] o.f.c.internal.license.VersionPrinter    : 
-2024-01-13T21:25:26.361-03:00  WARN 9564 --- [           main] o.m.jdbc.message.server.ErrorPacket      : Error: 1193-HY000: Unknown system variable 'WSREP_ON'
-2024-01-13T21:25:26.375-03:00  INFO 9564 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mariadb://localhost/vollmed_api (MariaDB 11.2)
-2024-01-13T21:25:26.385-03:00  WARN 9564 --- [           main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MariaDB 11.2 is newer than this version of Flyway and support has not been tested. The latest supported version of MariaDB is 10.11.
-2024-01-13T21:25:26.480-03:00  INFO 9564 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 7 migrations (execution time 00:00.066s)
-2024-01-13T21:25:26.501-03:00  INFO 9564 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema `vollmed_api`: 7
-2024-01-13T21:25:26.509-03:00  INFO 9564 --- [           main] o.f.core.internal.command.DbMigrate      : Schema `vollmed_api` is up to date. No migration necessary.
-2024-01-13T21:25:26.826-03:00  INFO 9564 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-13T21:25:27.027-03:00  INFO 9564 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
-2024-01-13T21:25:27.145-03:00  INFO 9564 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-01-13T21:25:27.860-03:00  INFO 9564 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-13T21:25:29.714-03:00  INFO 9564 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-01-13T21:25:29.720-03:00  INFO 9564 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-13T21:25:30.873-03:00  INFO 9564 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-01-13T21:25:32.395-03:00  WARN 9564 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-13T21:25:33.148-03:00  INFO 9564 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@21d85933, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@250c5892, org.springframework.security.web.context.SecurityContextHolderFilter@4a544672, org.springframework.security.web.header.HeaderWriterFilter@72b88762, org.springframework.web.filter.CorsFilter@238fcafa, org.springframework.security.web.authentication.logout.LogoutFilter@7a62e096, med.voll.api.infra.security.SecurityFilter@43cf97a8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5dd3841, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6b6dce39, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@45e931a9, org.springframework.security.web.session.SessionManagementFilter@53a74970, org.springframework.security.web.access.ExceptionTranslationFilter@63cfd703, org.springframework.security.web.access.intercept.AuthorizationFilter@71bebddf]
-2024-01-13T21:25:34.161-03:00  INFO 9564 --- [           main] med.voll.api.ApiApplicationTests         : Started ApiApplicationTests in 13.418 seconds (process running for 16.612)
+2024-01-13T21:25:41.245-03:00  INFO 9564 --- [           main] m.v.a.d.medico.MedicoRepositoryTest      : Starting MedicoRepositoryTest using Java 17.0.3.1 with PID 9564 (started by marlo in C:\Users\marlo\eclipse-workspace\api)
+2024-01-13T21:25:41.245-03:00  INFO 9564 --- [           main] m.v.a.d.medico.MedicoRepositoryTest      : The following 1 profile is active: "test"
+2024-01-13T21:25:41.590-03:00  INFO 9564 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-13T21:25:41.642-03:00  INFO 9564 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 4 JPA repository interfaces.
+2024-01-13T21:25:41.800-03:00  INFO 9564 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-01-13T21:25:41.810-03:00  INFO 9564 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.mariadb.jdbc.Connection@1db7acc9
+2024-01-13T21:25:41.811-03:00  INFO 9564 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-01-13T21:25:41.823-03:00  WARN 9564 --- [           main] o.m.jdbc.message.server.ErrorPacket      : Error: 1193-HY000: Unknown system variable 'WSREP_ON'
+2024-01-13T21:25:41.829-03:00  INFO 9564 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mariadb://localhost/vollmed_api_test (MariaDB 11.2)
+2024-01-13T21:25:41.833-03:00  WARN 9564 --- [           main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MariaDB 11.2 is newer than this version of Flyway and support has not been tested. The latest supported version of MariaDB is 10.11.
+2024-01-13T21:25:41.865-03:00  INFO 9564 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 7 migrations (execution time 00:00.029s)
+2024-01-13T21:25:41.877-03:00  INFO 9564 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema `vollmed_api_test`: 7
+2024-01-13T21:25:41.878-03:00  INFO 9564 --- [           main] o.f.core.internal.command.DbMigrate      : Schema `vollmed_api_test` is up to date. No migration necessary.
+2024-01-13T21:25:41.924-03:00  INFO 9564 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-13T21:25:41.935-03:00  INFO 9564 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-01-13T21:25:41.951-03:00  INFO 9564 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-13T21:25:42.213-03:00  INFO 9564 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-13T21:25:42.213-03:00  INFO 9564 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-13T21:25:42.659-03:00  INFO 9564 --- [           main] m.v.a.d.medico.MedicoRepositoryTest      : Started MedicoRepositoryTest in 1.533 seconds (process running for 25.11)
+Hibernate: 
+    insert 
+    into
+        medicos
+        (ativo, crm, email, bairro, cep, cidade, complemento, logradouro, numero, uf, especialidade, nome, telefone) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        pacientes
+        (ativo, cpf, email, bairro, cep, cidade, complemento, logradouro, numero, uf, nome, telefone) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        consultas
+        (data, medico_id, motivo_cancelamento, paciente_id) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.ativo,
+        m1_0.crm,
+        m1_0.email,
+        m1_0.bairro,
+        m1_0.cep,
+        m1_0.cidade,
+        m1_0.complemento,
+        m1_0.logradouro,
+        m1_0.numero,
+        m1_0.uf,
+        m1_0.especialidade,
+        m1_0.nome,
+        m1_0.telefone 
+    from
+        medicos m1_0 
+    where
+        m1_0.ativo=1 
+        and m1_0.especialidade=? 
+        and m1_0.id not in (select
+            c1_0.medico_id 
+        from
+            consultas c1_0 
+        where
+            c1_0.data=? 
+            and c1_0.motivo_cancelamento is null) 
+    order by
+        rand() 
+    limit
+        1
+]]></system-out>
+  </testcase>
+  <testcase name="testEscolherMedicoAleatorioLivreNaDataCenario2" classname="med.voll.api.domain.medico.MedicoRepositoryTest" time="0.032">
+    <system-out><![CDATA[Hibernate: 
+    insert 
+    into
+        medicos
+        (ativo, crm, email, bairro, cep, cidade, complemento, logradouro, numero, uf, especialidade, nome, telefone) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.ativo,
+        m1_0.crm,
+        m1_0.email,
+        m1_0.bairro,
+        m1_0.cep,
+        m1_0.cidade,
+        m1_0.complemento,
+        m1_0.logradouro,
+        m1_0.numero,
+        m1_0.uf,
+        m1_0.especialidade,
+        m1_0.nome,
+        m1_0.telefone 
+    from
+        medicos m1_0 
+    where
+        m1_0.ativo=1 
+        and m1_0.especialidade=? 
+        and m1_0.id not in (select
+            c1_0.medico_id 
+        from
+            consultas c1_0 
+        where
+            c1_0.data=? 
+            and c1_0.motivo_cancelamento is null) 
+    order by
+        rand() 
+    limit
+        1
 ]]></system-out>
   </testcase>
 </testsuite>
